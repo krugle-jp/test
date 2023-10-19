@@ -1,6 +1,6 @@
 /*
- * Project Name  : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½WEB
- * Subsystem Name: ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\
+ * Project Name  : Ÿ¢‘ãWEB
+ * Subsystem Name: ‰ñûŠÇ—‹@”\
  *
  * 
  * Created on 2004/07/27
@@ -17,7 +17,7 @@ import jp.ags.acm.common.AGSUtil;
 import jp.ags.common.AGSM;
 
 /**
- * <strong>[tran]ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——(AG01)</strong>
+ * <strong>[tran]‰ñûŠÇ—‹@”\^¿‹“ü‹àó‹µˆê——(AG01)</strong>
  * <p>
  *
  * @author XXXX
@@ -30,12 +30,12 @@ public class AGSAG01Action extends AgsActionUtility {
     private static final String W_TYPE_DISP = "1" ;
 
     private static final String[] PD_EXTRACTED_DSP = {
-        "ï¿½iï¿½Sï¿½Äj",
-        "ï¿½ï¿½ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ëï¿½ï¿½ï¿½)",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
+        "i‘S‚Äj",
+        "–¢“Ë‡¿‹",
+        "–¢“Ë‡“ü‹à",
+        "–¢“Ë‡¿‹^–¢“Ë‡“ü‹à",
+        "–¢Á(“Ë‡Ï)",
+        "ÁÏ",
     } ;
     private static final String[] PD_EXTRACTED_VAL = {
         "15",
@@ -52,7 +52,7 @@ public class AGSAG01Action extends AgsActionUtility {
     private static final int EXTRACTED_TG    = 0x00000004 ;
     private static final int EXTRACTED_KS    = 0x00000008 ;
 
-    // ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    // •\¦Œ”
 /*
     private static final String[] PD_LISTCNT_DSP = {
         "20",
@@ -67,7 +67,7 @@ public class AGSAG01Action extends AgsActionUtility {
         "50",
     } ;
 */
-    // ï¿½\ï¿½[ï¿½gï¿½ÌƒJï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    // ƒ\[ƒg‚ÌƒJƒ‰ƒ€—ñ
     private static final String[] SORT_COLUMN = {
         "SK_DT",
         "SK_USERCD",
@@ -79,12 +79,12 @@ public class AGSAG01Action extends AgsActionUtility {
         "NK_MISYORI",
         "NK_SUM",
     } ;
-    // ï¿½\ï¿½[ï¿½gï¿½ï¿½
+    // ƒ\[ƒg‡
     private static final String[] ASCEND = {
         "ASC",
         "DESC",
     } ;
-    // ï¿½Aï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½
+    // ƒAƒNƒVƒ‡ƒ“
     private static final String[] ACTION = {
         "SEARCH",
         "SORT",
@@ -94,21 +94,21 @@ public class AGSAG01Action extends AgsActionUtility {
         "KESHIKOMI",
         "UPDATE",
     } ;
-    private static final int ACT_SEARCH            = 0 ; // ï¿½ï¿½ï¿½ï¿½
-    private static final int ACT_SORT              = 1 ; // ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½
-    private static final int ACT_LISTCNT           = 2 ; // ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏX
-    private static final int ACT_PAGEBREAK         = 3 ; // ï¿½ï¿½ï¿½yï¿½[ï¿½W
-    private static final int ACT_RETURN            = 4 ; // ï¿½ß‚ï¿½
-    private static final int ACT_KESHIKOMI         = 5 ; // ï¿½ï¿½ï¿½ï¿½
-    private static final int ACT_UPDATE            = 6 ; // ï¿½Xï¿½Vï¿½ß‚ï¿½
+    private static final int ACT_SEARCH            = 0 ; // ŒŸõ
+    private static final int ACT_SORT              = 1 ; // •À‚Ñ‘Ö‚¦
+    private static final int ACT_LISTCNT           = 2 ; // •\¦Œ”•ÏX
+    private static final int ACT_PAGEBREAK         = 3 ; // ‰üƒy[ƒW
+    private static final int ACT_RETURN            = 4 ; // –ß‚é
+    private static final int ACT_KESHIKOMI         = 5 ; // Á
+    private static final int ACT_UPDATE            = 6 ; // XV–ß‚è
 
 //    private int action_ ;
 
 /**
- * ï¿½ï¿½ï¿½Íƒ`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½sï¿½È‚ï¿½.
+ * “ü—Íƒ`ƒFƒbƒN‚ğs‚È‚¤.
  *
- * @return boolean ï¿½`ï¿½Fï¿½bï¿½Nï¿½nï¿½jï¿½Ì‚Æ‚ï¿½trueï¿½Aï¿½mï¿½fï¿½Ì‚Æ‚ï¿½false
- * @since ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ 1.00
+ * @return boolean ƒ`ƒFƒbƒN‚n‚j‚Ì‚Æ‚«trueA‚m‚f‚Ì‚Æ‚«false
+ * @since ƒo[ƒWƒ‡ƒ“ 1.00
  */
     protected boolean checkInput() {
         XXXXUtil.log(XXXXUtil.DEBUG, "AGSAG01Action#checkInput()") ;
@@ -119,8 +119,8 @@ public class AGSAG01Action extends AgsActionUtility {
        int action_ ;
        ActionErrors errors = new ActionErrors() ;
 
-/* 2004/10/26 ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DB2ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½éšï¿½ï¿½ï¿½ï¿½
+/* 2004/10/26 ”r‘¼§Œä */
+        // šššDB2‚Ì³“–«‚ğƒ`ƒFƒbƒN‚·‚éššš
         String pid = getPageId(db1) ;
         if(!(pid.equals("AG01") ||
             pid.equals("AG05") ||
@@ -180,7 +180,7 @@ public class AGSAG01Action extends AgsActionUtility {
 
         action_ = -1 ;
 
-/* 2004/10/26 ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+/* 2004/10/26 ”r‘¼§Œä */
         if (pid.equals("AG01") ||
             pid.equals("AG05") ||
             pid.equals("AG07") ||
@@ -200,58 +200,58 @@ public class AGSAG01Action extends AgsActionUtility {
             pid.equals("AJ05") ||
             pid.equals("EA913")) {
 
-            /*------------------ ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Ìæ“¾ --------------------------------*/
-            // ï¿½Aï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½
+            /*------------------ ƒŠƒNƒGƒXƒg‚Ìæ“¾ --------------------------------*/
+            // ƒAƒNƒVƒ‡ƒ“
             action_ = AGSUtil.getIndex(ACTION, db1.getStringNvl("_ACTION")) ;
 
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-            // 2006-05-17 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ START
+            // ŒŸõğŒ
+            // 2006-05-17 }”Ô•¡”‘I‘ğ START
             //String pd_agsubcd = db1.getStringNvl("_PD_AGSUBCD") ;
             String[] pd_agsubcd = db1.getStringArrayNvl("_PD_AGSUBCD",new String[0]) ;
-            // 2006-05-17 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ END
+            // 2006-05-17 }”Ô•¡”‘I‘ğ END
             String pd_extracted = db1.getStringNvl("_PD_EXTRACTED") ;
             String pd_sk_seg = db1.getStringNvl("_PD_SK_SEG") ;
             String pd_nk_seg = db1.getStringNvl("_PD_NK_SEG") ;
             String pd_tgc = db1.getStringNvl("_PD_TGC") ;
             String rb_tg_ptn = db1.getStringNvl("_RB_TG_PTN") ;
             String skFromYear = db1.getStringNvl("_SKFROMYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String skFromMonth = db1.getStringPad("_SKFROMMONTH","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
             String pd_skFromDay = db1.getStringNvl("_PD_SKFROMDAY") ;
             String skToYear = db1.getStringNvl("_SKTOYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String skToMonth = db1.getStringPad("_SKTOMONTH","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
             String pd_skToDay = db1.getStringNvl("_PD_SKTODAY") ;
             String nkFromYear = db1.getStringNvl("_NKFROMYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String nkFromMonth = db1.getStringPad("_NKFROMMONTH","0",2) ;
             String nkFromDay = db1.getStringPad("_NKFROMDAY","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
             String nkToYear = db1.getStringNvl("_NKTOYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String nkToMonth = db1.getStringPad("_NKTOMONTH","0",2) ;
             String nkToDay = db1.getStringPad("_NKTODAY","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
-            // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ ST
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
+            // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á ST
             String nkinFromYear = db1.getStringNvl("_NKINFROMYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String nkinFromMonth = db1.getStringPad("_NKINFROMMONTH","0",2) ;
             String nkinFromDay = db1.getStringPad("_NKINFROMDAY","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
             String nkinToYear = db1.getStringNvl("_NKINTOYEAR") ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
             String nkinToMonth = db1.getStringPad("_NKINTOMONTH","0",2) ;
             String nkinToDay = db1.getStringPad("_NKINTODAY","0",2) ;
-            // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
-            // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ EX
-            // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ START
+            // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
+            // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á EX
+            // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á START
             String pd_nk_houhou = db1.getStringNvl("_PD_NK_HOUHOU") ;
             String pd_sk_houhou = db1.getStringNvl("_PD_SK_HOUHOU");
-            // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ END
+            // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á END
             String usercd = db1.getStringNvl("_USERCD") ;
-            // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD START
+            // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD START
             String nkpayFromYear = db1.getStringNvl("_NKPAYFROMYEAR") ;
             String nkpayFromMonth = db1.getStringPad("_NKPAYFROMMONTH","0",2) ;
             String nkpayFromDay = db1.getStringPad("_NKPAYFROMDAY","0",2) ;
@@ -264,25 +264,25 @@ public class AGSAG01Action extends AgsActionUtility {
             String stopreason_000 = db1.getStringNvl("_STOPREASON_000");
             String stopreason_963 = db1.getStringNvl("_STOPREASON_963");
             String stopreason_725 = db1.getStringNvl("_STOPREASON_725");
-            // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD END
+            // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD END
 
-            // ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½
+            // •À‚Ñ‘Ö‚¦
             String sort = db1.getStringNvl("_SORT") ;
             String ascend = db1.getStringNvl("_ASCEND") ;
 
-            // ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            // •\¦Œ”
             String pd_listCnt = db1.getStringNvl("_PD_LISTCNT") ;
 
-            // ï¿½Ëï¿½ï¿½Iï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½X
+            // “Ë‡‘I‘ğƒ`ƒFƒbƒNƒ{ƒbƒNƒX
             String[] wlh_pk = db1.getStringArrayNvl("_WLH_PK", new String[0]) ;
             String[] cb_check_flg = db1.getStringArrayNvl("_CB_CHECK_FLG", new String[0]) ;
 
-           // ï¿½ï¿½ï¿½yï¿½[ï¿½WNo
+           // ‰üƒy[ƒWNo
             String pno = db1.getStringNvl("_PNO") ;
 
-            /*------------------ ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Ìæ“¾ ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ ---------------------------*/
+            /*------------------ ƒŠƒNƒGƒXƒg‚Ìæ“¾ ‚±‚±‚Ü‚Å ---------------------------*/
 
-            /*------------------ ï¿½ï¿½ï¿½Íƒ`ï¿½Fï¿½bï¿½N ----------------------------------------*/
+            /*------------------ “ü—Íƒ`ƒFƒbƒN ----------------------------------------*/
             if(action_ == ACT_SEARCH) {
                 errors = new ActionErrors();
             }
@@ -290,162 +290,162 @@ public class AGSAG01Action extends AgsActionUtility {
             int rc = 0 ;
             if (action_ == ACT_SEARCH || action_ == ACT_UPDATE) {
                 setTranId(db1, "AG01") ;
-                // ï¿½}ï¿½ï¿½(_PD_AGSUBCD)ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
+                // }”Ô(_PD_AGSUBCD)‚Ìƒ`ƒFƒbƒN
                 String[] agsubcdList = getLoginAgsubcdList() ;
                 if (getMastercd().equals(MASTERCD_T)) {
                     agsubcdList = XXXXUtil.addHead(agsubcdList, AGSUBCD_ALL_VAL) ;
                 }
                 if (AGSUtil.getIndex(agsubcdList, pd_agsubcd) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "_PD_AGSUBCDï¿½Gï¿½ï¿½ï¿½[") ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "_PD_AGSUBCDƒGƒ‰[") ;
                     errors.add("ER_AG01_PD_AGSUBCD", new ActionMessage("errors.ER_AG01_PD_AGSUBCD")) ;
                 }
-                // ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½
+                // ’ŠoğŒ
                 if (AGSUtil.getIndex(PD_EXTRACTED_VAL, pd_extracted) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½error=", pd_extracted) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "’ŠoğŒerror=", pd_extracted) ;
                     errors.add("ER_AG01_PD_EXTRACTED", new ActionMessage("errors.ER_AG01_PD_EXTRACTED")) ;
                 }
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                // ¿‹í•Ê
                 if ((pd_sk_seg.length() > 0) && (AGSUtil.getIndex(AGSM.getStringArray(AGSM.RS_SEIKYUSHUBETSU, "SKS_CD"), pd_sk_seg) == -1)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½error=", pd_sk_seg) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "¿‹í•Êerror=", pd_sk_seg) ;
                     errors.add("ER_AG01_PD_SK_SEG", new ActionMessage("errors.ER_AG01_PD_SK_SEG")) ;
                 }
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                // “ü‹àí•Ê
                 if ((pd_nk_seg.length() > 0) && (AGSUtil.getIndex(AGSM.getStringArray(AGSM.RS_NYUKINSHUBETSU, "NKS_CD"), pd_nk_seg) == -1)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½error=", pd_nk_seg) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹àí•Êerror=", pd_nk_seg) ;
                     errors.add("ER_AG01_PD_NK_SEG", new ActionMessage("errors.ER_AG01_PD_NK_SEG")) ;
                 }
-                // 2017/12/07 ï¿½oï¿½^ï¿½ï¿½ï¿½Pï¿½tï¿½Fï¿½[ï¿½Y2.5ï¿½Î‰ï¿½ CHG START
-                // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ START
-                // ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@
+                // 2017/12/07 “o˜^‰ü‘PƒtƒF[ƒY2.5‘Î‰ CHG START
+                // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á START
+                // x•¥•û–@
                 if ((pd_sk_houhou.length() > 0) && (AGSUtil.getIndex(AGSM.getStringArray(AGSM.RS_SK_PAYSEG_CREDIT, "SK_PAYSEG_CREDIT_CD"), pd_sk_houhou) == -1)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@error=", pd_sk_houhou) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "x•¥•û–@error=", pd_sk_houhou) ;
                     errors.add("ER_AG01_PD_SK_HOUHOU", new ActionMessage("errors.ER_AG01_PD_SK_HOUHOU")) ;
                 }
-                // 2017/12/07 ï¿½oï¿½^ï¿½ï¿½ï¿½Pï¿½tï¿½Fï¿½[ï¿½Y2.5ï¿½Î‰ï¿½ CHG END
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@
+                // 2017/12/07 “o˜^‰ü‘PƒtƒF[ƒY2.5‘Î‰ CHG END
+                // “ü‹à•û–@
                 if ((pd_nk_houhou.length() > 0) && (AGSUtil.getIndex(AGSM.getStringArray(AGSM.RS_NYUKINHOUHOU, "NY_CD"), pd_nk_houhou) == -1)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@error=", pd_nk_houhou) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à•û–@error=", pd_nk_houhou) ;
                     errors.add("ER_AG01_PD_NK_HOUHOU", new ActionMessage("errors.ER_AG01_PD_NK_HOUHOU")) ;
                 }
-                // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ END
-                // ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ•ª
+                // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á END
+                // “Ë‡’²®‹æ•ª
                 if (AGSUtil.getIndex(XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_CHOUSEIKOUMOKU_ALL, "CS_CD"), ""), pd_tgc) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½Ëï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ•ªerror=", pd_tgc) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“Ë‡’²®‹æ•ªerror=", pd_tgc) ;
                     errors.add("ER_AG01_PD_TGC", new ActionMessage("errors.ER_AG01_PD_TGC")) ;
                 }
-                // ï¿½Ëï¿½ï¿½pï¿½^ï¿½[ï¿½ï¿½
+                // “Ë‡ƒpƒ^[ƒ“
                 if (AGSUtil.getIndex(XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_CD"), ""), rb_tg_ptn) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½Ëï¿½ï¿½pï¿½^ï¿½[ï¿½ï¿½error=", rb_tg_ptn) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“Ë‡ƒpƒ^[ƒ“error=", rb_tg_ptn) ;
                     errors.add("ER_AG01_RB_TG_PTN", new ActionMessage("errors.ER_AG01_RB_TG_PTN")) ;
                 }
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-                // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+                // ¿‹’÷“ú
+                // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
                 rc = checkDateSP(skFromYear, skFromMonth, pd_skFromDay, skToYear, skToMonth, pd_skToDay, SIZ0_OK) ;
                 if (isDateError(rc, ER_DT_FROM)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nerror=", skFromYear + "/" + skFromMonth + "/" + pd_skFromDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "¿‹’÷“úŠJnerror=", skFromYear + "/" + skFromMonth + "/" + pd_skFromDay) ;
                     errors.add("ER_AG01_SKFROM", new ActionMessage("errors.ER_AG01_SKFROM")) ;
                 }
                 if (isDateError(rc, ER_DT_TO)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½error=", skToYear + "/" + skToMonth + "/" + pd_skToDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "¿‹’÷“úI—¹error=", skToYear + "/" + skToMonth + "/" + pd_skToDay) ;
                     errors.add("ER_AG01_SKTO", new ActionMessage("errors.ER_AG01_SKTO")) ;
                 }
                 if (isDateError(rc, ER_DT_MISSMATCH)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fromï¿½ï¿½Toï¿½Ì‘Ã“ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[") ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "¿‹’÷“úFrom‚ÆTo‚Ì‘Ã“–«ƒGƒ‰[") ;
                     errors.add("ER_AG01_SK_DT", new ActionMessage("errors.ER_AG01_SK_DT")) ;
                 }
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                // “ü‹à“ú
                 rc = checkDate(nkFromYear, nkFromMonth, nkFromDay, nkToYear, nkToMonth, nkToDay, SIZ0_OK) ;
                 if (isDateError(rc, ER_DT_FROM)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nerror=", nkFromYear + "/" + nkFromMonth + "/" + nkFromDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“úŠJnerror=", nkFromYear + "/" + nkFromMonth + "/" + nkFromDay) ;
                     errors.add("ER_AG01_NKFROM", new ActionMessage("errors.ER_AG01_NKFROM")) ;
                 }
                 if (isDateError(rc, ER_DT_TO)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½error=", nkToYear + "/" + nkToMonth + "/" + nkToDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“úI—¹error=", nkToYear + "/" + nkToMonth + "/" + nkToDay) ;
                     errors.add("ER_AG01_NKTO", new ActionMessage("errors.ER_AG01_NKTO")) ;
                 }
                 if (isDateError(rc, ER_DT_MISSMATCH)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fromï¿½ï¿½Toï¿½Ì‘Ã“ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[") ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“úFrom‚ÆTo‚Ì‘Ã“–«ƒGƒ‰[") ;
                     errors.add("ER_AG01_NK_DT", new ActionMessage("errors.ER_AG01_NK_DT")) ;
                 }
-                // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ EX
-                // ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½
+                // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á EX
+                // “ü‹à“o˜^“ú“ú
                 rc = checkDate(nkinFromYear, nkinFromMonth, nkinFromDay, nkinToYear, nkinToMonth, nkinToDay, SIZ0_OK) ;
                 if (isDateError(rc, ER_DT_FROM)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Jï¿½nerror=", nkinFromYear + "/" + nkinFromMonth + "/" + nkinFromDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“o˜^“úŠJnerror=", nkinFromYear + "/" + nkinFromMonth + "/" + nkinFromDay) ;
                     errors.add("ER_AG01_NKINFROM", new ActionMessage("errors.ER_AG01_NKINFROM")) ;
                 }
                 if (isDateError(rc, ER_DT_TO)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Iï¿½ï¿½error=", nkinToYear + "/" + nkinToMonth + "/" + nkinToDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“o˜^“úI—¹error=", nkinToYear + "/" + nkinToMonth + "/" + nkinToDay) ;
                     errors.add("ER_AG01_NKINTO", new ActionMessage("errors.ER_AG01_NKINTO")) ;
                 }
                 if (isDateError(rc, ER_DT_MISSMATCH)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½Fromï¿½ï¿½Toï¿½Ì‘Ã“ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[") ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "“ü‹à“o˜^“úFrom‚ÆTo‚Ì‘Ã“–«ƒGƒ‰[") ;
                     errors.add("ER_AG01_NKIN_DT", new ActionMessage("errors.ER_AG01_NKIN_DT")) ;
                 }
-                // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
-                // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ EX
-                // ï¿½ï¿½ï¿½qï¿½lï¿½Rï¿½[ï¿½h
-                chk = XXXXUtil.CHK_NUMALPH | XXXXUtil.CHK_SIZ0_OK ;// 2017/02/15 ï¿½oï¿½^ï¿½ï¿½ï¿½Pï¿½Î‰ï¿½ CHG
+                // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
+                // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á EX
+                // ‚¨‹q—lƒR[ƒh
+                chk = XXXXUtil.CHK_NUMALPH | XXXXUtil.CHK_SIZ0_OK ;// 2017/02/15 “o˜^‰ü‘P‘Î‰ CHG
                 rc = XXXXUtil.checkData(usercd, chk, 8, 8) ;
                 if (rc != XXXXUtil.RC_OK) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½qï¿½lï¿½Rï¿½[ï¿½herror=", usercd) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "‚¨‹q—lƒR[ƒherror=", usercd) ;
                     errors.add("ER_AG01_USERCD", new ActionMessage("errors.ER_AG01_USERCD")) ;
                 }
-                // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD START
-                // ï¿½xï¿½ï¿½ï¿½ï¿½
+                // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD START
+                // x•¥“ú
                 rc = checkDate(nkpayFromYear, nkpayFromMonth, nkpayFromDay, nkpayToYear, nkpayToMonth, nkpayToDay, SIZ0_OK) ;
                 if (isDateError(rc, ER_DT_FROM)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nerror=", nkpayFromYear + "/" + nkpayFromMonth + "/" + nkpayFromDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "x•¥“úŠJnerror=", nkpayFromYear + "/" + nkpayFromMonth + "/" + nkpayFromDay) ;
                     errors.add("ER_AG01_NKPAYFROM", new ActionMessage("errors.ER_AG01_NKPAYFROM")) ;
                 }
                 if (isDateError(rc, ER_DT_TO)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½error=", nkpayToYear + "/" + nkpayToMonth + "/" + nkpayToDay) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "x•¥“úI—¹error=", nkpayToYear + "/" + nkpayToMonth + "/" + nkpayToDay) ;
                     errors.add("ER_AG01_NKPAYTO", new ActionMessage("errors.ER_AG01_NKPAYTO")) ;
                 }
                 if (isDateError(rc, ER_DT_MISSMATCH)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½xï¿½ï¿½ï¿½ï¿½Fromï¿½ï¿½Toï¿½Ì‘Ã“ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[") ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "x•¥“úFrom‚ÆTo‚Ì‘Ã“–«ƒGƒ‰[") ;
                     errors.add("ER_AG01_NKPAY_DT", new ActionMessage("errors.ER_AG01_NKPAY_DT")) ;
                 }
-                // ï¿½ó’’ï¿½~ï¿½Lï¿½ï¿½
+                // ó’’â~—L–³
                 if ((pd_resstp.length() > 0) && (AGSUtil.getIndex(AGSM.getStringArray(AGSM.RS_PD_RESSTP, "RS_PD_RESSTP_CD"), pd_resstp) == -1)) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ó’’ï¿½~ï¿½Lï¿½ï¿½error=", pd_resstp) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "ó’’â~—L–³error=", pd_resstp) ;
                     errors.add("ER_AG01_PD_RESSTP", new ActionMessage("errors.ER_AG01_PD_RESSTP")) ;
                 }
-                // ï¿½ó’’ï¿½~ï¿½ï¿½ï¿½R
+                // ó’’â~——R
             	if ((stopreason_312.length() != 0 && (!stopreason_312.equals("312"))) ||
                     (stopreason_501.length() != 0 && (!stopreason_501.equals("501"))) ||
                     (stopreason_000.length() != 0 && (!stopreason_000.equals("000"))) ||
                     (stopreason_963.length() != 0 && (!stopreason_963.equals("963"))) ||
                     (stopreason_725.length() != 0 && (!stopreason_725.equals("725")))) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ó’’ï¿½~ï¿½ï¿½ï¿½Rerror=", pd_resstp) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "ó’’â~——Rerror=", pd_resstp) ;
                     errors.add("ER_AG01_STOPREASON", new ActionMessage("errors.ER_AG01_STOPREASON")) ;
                 }
-                // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD END
+                // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD END
             }
             if (action_ == ACT_SORT) {
                 if (AGSUtil.getIndex(SORT_COLUMN, sort) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½ï¿½ï¿½error=", sort) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "•À‚Ñ‘Ö‚¦—ñerror=", sort) ;
                     errors.add("ER_AG01_SORT", new ActionMessage("errors.ER_AG01_SORT")) ;
                 }
                 if (AGSUtil.getIndex(ASCEND, ascend) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½ï¿½ï¿½error=", ascend) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "•À‚Ñ‘Ö‚¦‡error=", ascend) ;
                     errors.add("ER_AG01_ASCEND", new ActionMessage("errors.ER_AG01_ASCEND")) ;
                 }
             }
             if (action_ == ACT_LISTCNT) {
                 if (AGSUtil.getIndex(PD_LISTCNT_VAL, pd_listCnt) == -1) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½error=", pd_listCnt) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "•\¦Œ”error=", pd_listCnt) ;
                     errors.add("ER_AG01_PD_LISTCNT", new ActionMessage("errors.ER_AG01_PD_LISTCNT")) ;
                 }
             }
             if (action_ == ACT_RETURN) {
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½
+                // ŒŸõğŒ‚ª—LŒø‚©
                 if (!db2.getStringNvl("LIST_VALID_FLG").equals("1")) {
                     action_ = -1 ;
                 }
             }
             if ((action_ == ACT_PAGEBREAK) || (action_ == ACT_RETURN)) {
-                // ï¿½ï¿½ï¿½yï¿½[ï¿½Wï¿½ÍˆÍƒ`ï¿½Fï¿½bï¿½N
+                // ‰üƒy[ƒW”ÍˆÍƒ`ƒFƒbƒN
                 chk = XXXXUtil.CHK_NUM ;
                 rc = XXXXUtil.checkData(pno, chk, 1, 8) ;
                 if (rc == XXXXUtil.RC_OK) {
@@ -457,20 +457,20 @@ public class AGSAG01Action extends AgsActionUtility {
                     }
                 }
                 if (rc != XXXXUtil.RC_OK) {
-                    XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½yï¿½[ï¿½WNOerror=", pno) ;
+                    XXXXUtil.log(XXXXUtil.DEBUG, "‰üƒy[ƒWNOerror=", pno) ;
                     errors.add("ER_AG01_PNO", new ActionMessage("errors.ER_AG01_PNO")) ;
                 }
             }
             if ((action_ == ACT_PAGEBREAK) || (action_ == ACT_KESHIKOMI) || (action_ == ACT_LISTCNT)) {
 
-                // ï¿½Ëï¿½ï¿½Iï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½X
+                // “Ë‡‘I‘ğƒ`ƒFƒbƒNƒ{ƒbƒNƒX
                 chk = XXXXUtil.CHK_NUM | XXXXUtil.CHK_SIZ0_OK ;
                 int len = wlh_pk.length ;
                 for (int i = 0 ; i < len ; i++) {
                     if (wlh_pk[i] != null) {
                         rc = XXXXUtil.checkData(wlh_pk[i], chk, 0, 20) ;
                         if (rc != XXXXUtil.RC_OK) {
-                            XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½Ëï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½Xpk error=", wlh_pk[i]) ;
+                            XXXXUtil.log(XXXXUtil.DEBUG, "“Ë‡ƒ`ƒFƒbƒNƒ{ƒbƒNƒXpk error=", wlh_pk[i]) ;
                             errors.add("ER_AG01_WLH_PK", new ActionMessage("errors.ER_AG01_WLH_PK")) ;
                             break ;
                         }
@@ -479,29 +479,29 @@ public class AGSAG01Action extends AgsActionUtility {
                 len = cb_check_flg.length ;
                 for (int i = 0 ; i < len ; i++) {
                     if ((cb_check_flg[i] != null) && !cb_check_flg[i].equals("1")) {
-                        XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½Ëï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½Xcb_check_flg error=", cb_check_flg[i]) ;
+                        XXXXUtil.log(XXXXUtil.DEBUG, "“Ë‡ƒ`ƒFƒbƒNƒ{ƒbƒNƒXcb_check_flg error=", cb_check_flg[i]) ;
                         errors.add("ER_AG01_CB_CHECK_FLG", new ActionMessage("errors.ER_AG01_CB_CHECK_FLG")) ;
                         break ;
                     }
                 }
             }
 
-            /*------------------ ï¿½ï¿½ï¿½Íƒ`ï¿½Fï¿½bï¿½N ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ -------------------------------*/
+            /*------------------ “ü—Íƒ`ƒFƒbƒN ‚±‚±‚Ü‚Å -------------------------------*/
 
-            /*------------------ ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½DB2ï¿½Éİ’è‚·ï¿½ï¿½ -------------------------*/
+            /*------------------ ˆøŒp‚¬ƒf[ƒ^‚ğDB2‚Éİ’è‚·‚é -------------------------*/
             if (action_ == ACT_SEARCH||action_ == ACT_UPDATE) {
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-            	// 2006-05-17 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ START
+                // ŒŸõğŒ
+            	// 2006-05-17 }”Ô•¡”‘I‘ğ START
             	//db2.setString("PD_AGSUBCD", pd_agsubcd) ;
                 db2.setStringArray("PD_AGSUBCD", pd_agsubcd) ;
-                // 2006-05-17 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ END
+                // 2006-05-17 }”Ô•¡”‘I‘ğ END
                 db2.setString("PD_EXTRACTED", pd_extracted) ;
                 db2.setString("PD_SK_SEG", pd_sk_seg) ;
                 db2.setString("PD_NK_SEG", pd_nk_seg) ;
                 db2.setString("PD_TGC", pd_tgc) ;
                 db2.setString("RB_TG_PTN", rb_tg_ptn) ;
                 db2.setString("SKFROMYEAR", skFromYear) ;
-                // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+                // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
                 db2.setString("SKFROMMONTH", skFromMonth) ;
                 db2.setString("PD_SKFROMDAY", pd_skFromDay) ;
                 db2.setString("SKTOYEAR", skToYear) ;
@@ -513,21 +513,21 @@ public class AGSAG01Action extends AgsActionUtility {
                 db2.setString("NKTOYEAR", nkToYear) ;
                 db2.setString("NKTOMONTH", nkToMonth) ;
                 db2.setString("NKTODAY", nkToDay) ;
-                // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ ST
+                // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á ST
                 db2.setString("NKINFROMYEAR", nkinFromYear) ;
                 db2.setString("NKINFROMMONTH", nkinFromMonth) ;
                 db2.setString("NKINFROMDAY", nkinFromDay) ;
                 db2.setString("NKINTOYEAR", nkinToYear) ;
                 db2.setString("NKINTOMONTH", nkinToMonth) ;
                 db2.setString("NKINTODAY", nkinToDay) ;
-                // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
-                // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ EX
-                // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ START
+                // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
+                // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á EX
+                // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á START
                 db2.setString("PD_SK_HOUHOU", pd_sk_houhou);
                 db2.setString("PD_NK_HOUHOU", pd_nk_houhou);
-                // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ END
+                // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á END
                 db2.setString("USERCD", usercd) ;
-                // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD START
+                // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD START
                 db2.setString("NKPAYFROMYEAR", nkpayFromYear) ;
                 db2.setString("NKPAYFROMMONTH", nkpayFromMonth) ;
                 db2.setString("NKPAYFROMDAY", nkpayFromDay) ;
@@ -540,9 +540,9 @@ public class AGSAG01Action extends AgsActionUtility {
                 db2.setString("STOPREASON_000", stopreason_000);
                 db2.setString("STOPREASON_963", stopreason_963);
                 db2.setString("STOPREASON_725", stopreason_725);
-                // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD END
+                // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD END
 
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Oï¿½ğ–³Œï¿½ï¿½É‚ï¿½ï¿½ï¿½
+                // ŒŸõğŒ—LŒøƒtƒ‰ƒO‚ğ–³Œø‚É‚·‚é
                 db2.setString("LIST_VALID_FLG", "0") ;
 
             }
@@ -551,18 +551,18 @@ public class AGSAG01Action extends AgsActionUtility {
                 db2.setString("ASCEND", ascend) ;
             }
             if ((action_ == ACT_PAGEBREAK) || (action_ == ACT_RETURN)) {
-                // ï¿½ï¿½ï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½
+                // ‰üƒy[ƒW§Œä
                 db2.setString("REQUEST_PAGE_NO", pno) ;
             }
             if ((action_ == ACT_PAGEBREAK) || (action_ == ACT_KESHIKOMI) || (action_ == ACT_LISTCNT)) {
-                // ï¿½Ëï¿½ï¿½Iï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½X
+                // “Ë‡‘I‘ğƒ`ƒFƒbƒNƒ{ƒbƒNƒX
                 db2.setStringArray("WLH_PK", wlh_pk) ;
                 db2.setStringArray("CB_CHECK_FLG", cb_check_flg) ;
             }
             if (action_ == ACT_LISTCNT) {
                 db2.setString("PD_LISTCNT", pd_listCnt) ;
             }
-            /*------------------ ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½DB2ï¿½Éİ’è‚·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ ----------------*/
+            /*------------------ ˆøŒp‚¬ƒf[ƒ^‚ğDB2‚Éİ’è‚·‚é ‚±‚±‚Ü‚Å ----------------*/
         }
 
         db2.setInt("action_", action_) ;
@@ -574,9 +574,9 @@ public class AGSAG01Action extends AgsActionUtility {
     } // checkInput()
 
 /**
- * ï¿½Æ–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½È‚ï¿½.
+ * ‹Æ–±ˆ—‚ğs‚È‚¤.
  *
- * @since ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ 1.00
+ * @since ƒo[ƒWƒ‡ƒ“ 1.00
  */
     protected void execute() {
         XXXXUtil.log(XXXXUtil.DEBUG, "AGSAG01Action#execute()") ;
@@ -594,7 +594,7 @@ public class AGSAG01Action extends AgsActionUtility {
         if (errors.isEmpty()) {
             int rc = accessDB() ;
             if (rc < 0) {
-                logError("AGSAG01Action#ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[(accessDB rc:"+rc+")") ;
+                logError("AGSAG01Action#ƒVƒXƒeƒ€ƒGƒ‰[(accessDB rc:"+rc+")") ;
                 setTranId(db1, "EA999") ;
                 return ;
             }
@@ -607,25 +607,25 @@ public class AGSAG01Action extends AgsActionUtility {
         }
 
         if (action_ == ACT_KESHIKOMI) {
-            XXXXUtil.log(XXXXUtil.DEBUG, "ï¿½ï¿½ï¿½ï¿½ï¿½Ö‘Jï¿½ï¿½") ;
+            XXXXUtil.log(XXXXUtil.DEBUG, "Á‚Ö‘JˆÚ") ;
             XXXXDataBean db2_keshikomi = new XXXXDefaultDataBean() ;
             setDataBean("DB2_KESHIKOMI", db2_keshikomi) ;
             setTranId(db1, "AG19") ;
             return ;
         }
 
-        /*------------------ ï¿½ï¿½Ê•ï¿½ï¿½iï¿½Ìİ’ï¿½ --------------------------------------*/
-        // ï¿½Gï¿½ï¿½ï¿½[
+        /*------------------ ‰æ–Ê•”•i‚Ìİ’è --------------------------------------*/
+        // ƒGƒ‰[
         setError(db1, errors) ;
         setError(db2, errors) ;
 
-        // ï¿½}ï¿½ï¿½
+        // }”Ô
         String[] agsubcdList = getLoginAgsubcdList() ;
         String[] pd_agsubcd_val = agsubcdList ;
         String[] pd_agsubcd_dsp = agsubcdList ;
         if (getMastercd().equals(MASTERCD_T)) {
             pd_agsubcd_val = XXXXUtil.addHead(pd_agsubcd_val, AGSUBCD_ALL_VAL) ;
-            pd_agsubcd_dsp = XXXXUtil.addHead(pd_agsubcd_dsp, "(ï¿½Sï¿½ï¿½)") ;
+            pd_agsubcd_dsp = XXXXUtil.addHead(pd_agsubcd_dsp, "(‘S‚Ä)") ;
         }
         db1.setString("MASTERCD", getMastercd());
 
@@ -633,7 +633,7 @@ public class AGSAG01Action extends AgsActionUtility {
 
         db1.setStringArray("CHK_AGSUBCD",pd_agsubcd_val);
 
-    	// 2006-05-18 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ START
+    	// 2006-05-18 }”Ô•¡”‘I‘ğ START
         //db1.setPullDown(
         //    "PD_AGSUBCD",
         //    pd_agsubcd_val,
@@ -655,66 +655,66 @@ public class AGSAG01Action extends AgsActionUtility {
                     db2.getStringArrayNvl("PD_AGSUBCD", agsubcdList)
                 ) ;
         }
-    	// 2006-05-18 ï¿½}ï¿½Ô•ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ END
+    	// 2006-05-18 }”Ô•¡”‘I‘ğ END
 
 
-        // ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½
+        // ’ŠoğŒ
         db1.setPullDown(
             "PD_EXTRACTED",
             PD_EXTRACTED_VAL,
             PD_EXTRACTED_DSP,
             db2.getStringNvl("PD_EXTRACTED", PD_EXTRACTED_VAL[0])
         ) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // ¿‹í•Ê
         db1.setPullDown(
             "PD_SK_SEG",
             XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_SEIKYUSHUBETSU, "SKS_CD"), ""),
-            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_SEIKYUSHUBETSU, "SKS_NAME"), "(ï¿½Sï¿½ï¿½)"),
+            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_SEIKYUSHUBETSU, "SKS_NAME"), "(‘S‚Ä)"),
             db2.getStringNvl("PD_SK_SEG")
         ) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // “ü‹àí•Ê
         db1.setPullDown(
             "PD_NK_SEG",
             XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINSHUBETSU, "NKS_CD"), ""),
-            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINSHUBETSU, "NKS_NAME"), "(ï¿½Sï¿½ï¿½)"),
+            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINSHUBETSU, "NKS_NAME"), "(‘S‚Ä)"),
             db2.getStringNvl("PD_NK_SEG")
         ) ;
-        // 2017/12/07 ï¿½oï¿½^ï¿½ï¿½ï¿½Pï¿½tï¿½Fï¿½[ï¿½Y2.5ï¿½Î‰ï¿½ CHG START
-        // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ START
-        // ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@
+        // 2017/12/07 “o˜^‰ü‘PƒtƒF[ƒY2.5‘Î‰ CHG START
+        // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á START
+        // x•¥•û–@
         db1.setPullDown(
             "PD_SK_HOUHOU",
             AGSM.getStringArray(AGSM.RS_SK_PAYSEG_CREDIT, "SK_PAYSEG_CREDIT_CD"),
             AGSM.getStringArray(AGSM.RS_SK_PAYSEG_CREDIT, "SK_PAYSEG_CREDIT_NM"),
             db2.getStringNvl("PD_SK_HOUHOU")
         );
-        // 2017/12/07 ï¿½oï¿½^ï¿½ï¿½ï¿½Pï¿½tï¿½Fï¿½[ï¿½Y2.5ï¿½Î‰ï¿½ CHG END
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@
+        // 2017/12/07 “o˜^‰ü‘PƒtƒF[ƒY2.5‘Î‰ CHG END
+        // “ü‹à•û–@
         db1.setPullDown(
             "PD_NK_HOUHOU",
             XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINHOUHOU, "NY_CD"), ""),
-            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINHOUHOU, "NY_NAME"), "(ï¿½Sï¿½ï¿½)"),
+            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_NYUKINHOUHOU, "NY_NAME"), "(‘S‚Ä)"),
             db2.getStringNvl("PD_NK_HOUHOU")
         );
-        // 2006-05-16 ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ END
-        // ï¿½ï¿½ï¿½ï¿½ï¿½æ•ª
+        // 2006-05-16 x•¥•û–@E“ü‹à•û–@ğŒ’Ç‰Á END
+        // ’²®‹æ•ª
         db1.setPullDown(
             "PD_TGC",
             XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_CHOUSEIKOUMOKU_ALL, "CS_CD"), ""),
-            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_CHOUSEIKOUMOKU_ALL, "CS_NAME"), "(ï¿½Sï¿½ï¿½)"),
+            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_CHOUSEIKOUMOKU_ALL, "CS_NAME"), "(‘S‚Ä)"),
             db2.getStringNvl("PD_TGC")
         ) ;
-        // ï¿½Ëï¿½ï¿½pï¿½^ï¿½[ï¿½ï¿½
+        // “Ë‡ƒpƒ^[ƒ“
         db1.setRadioButton(
             "RB_TG_PTN",
             XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_CD"), ""),
-//            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_NAME"), "(ï¿½Sï¿½ï¿½)"), //ï¿½ï¿½ï¿½Ì•\ï¿½ï¿½ 2004-11-13
-//            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_PD_NAME"), "(ï¿½Sï¿½ï¿½)"), //ï¿½ï¿½ï¿½Ì{ï¿½ï¿½ï¿½Ì•\ï¿½ï¿½ 2004-11-13
-            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_SHORTNAME_MOD"), "(ï¿½Sï¿½ï¿½)"), //ï¿½ï¿½ï¿½Ì•\ï¿½ï¿½ 2004-12-10
+//            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_NAME"), "(‘S‚Ä)"), //—ªÌ•\¦ 2004-11-13
+//            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_PD_NAME"), "(‘S‚Ä)"), //—ªÌ{–¼Ì•\¦ 2004-11-13
+            XXXXUtil.addHead(AGSM.getStringArray(AGSM.RS_TOTSUGOPATTERN, "TGP_SHORTNAME_MOD"), "(‘S‚Ä)"), //—ªÌ•\¦ 2004-12-10
             db2.getStringNvl("RB_TG_PTN")
         ) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½Nï¿½ï¿½ï¿½ï¿½
-        // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX START
+        // ¿‹’÷“úŠJn”NŒ“ú
+        // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX START
         db1.setString("SKFROMYEAR", db2.getStringNvl("SKFROMYEAR")) ;
         db1.setString("SKFROMMONTH", db2.getStringNvl("SKFROMMONTH")) ;
         db1.setPullDown(
@@ -723,7 +723,7 @@ public class AGSAG01Action extends AgsActionUtility {
                 AGSM.getStringArray(AGSM.RS_CHECKDATE, "CHECKDATE_DSP"),
                 db2.getStringNvl("PD_SKFROMDAY", AGSM.getStringArray(AGSM.RS_CHECKDATE, "CHECKDATE_VAL")[0])
         ) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½
+        // ¿‹’÷“úI—¹”NŒ“ú
         db1.setString("SKTOYEAR", db2.getStringNvl("SKTOYEAR")) ;
         db1.setString("SKTOMONTH", db2.getStringNvl("SKTOMONTH")) ;
         db1.setPullDown(
@@ -732,62 +732,62 @@ public class AGSAG01Action extends AgsActionUtility {
                 AGSM.getStringArray(AGSM.RS_CHECKDATE, "CHECKDATE_DSP"),
                 db2.getStringNvl("PD_SKTODAY", AGSM.getStringArray(AGSM.RS_CHECKDATE, "CHECKDATE_VAL")[0])
         ) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½Nï¿½ï¿½ï¿½ï¿½
+        // “ü‹à“úŠJn”NŒ“ú
         db1.setString("NKFROMYEAR", db2.getStringNvl("NKFROMYEAR")) ;
         db1.setString("NKFROMMONTH", db2.getStringNvl("NKFROMMONTH")) ;
         db1.setString("NKFROMDAY", db2.getStringNvl("NKFROMDAY")) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½
+        // “ü‹à“úI—¹”NŒ“ú
         db1.setString("NKTOYEAR", db2.getStringNvl("NKTOYEAR")) ;
         db1.setString("NKTOMONTH", db2.getStringNvl("NKTOMONTH")) ;
         db1.setString("NKTODAY", db2.getStringNvl("NKTODAY")) ;
-        // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ ST
-        // ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Jï¿½nï¿½Nï¿½ï¿½ï¿½ï¿½
+        // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á ST
+        // “ü‹à“o˜^“úŠJn”NŒ“ú
         db1.setString("NKINFROMYEAR", db2.getStringNvl("NKINFROMYEAR")) ;
         db1.setString("NKINFROMMONTH", db2.getStringNvl("NKINFROMMONTH")) ;
         db1.setString("NKINFROMDAY", db2.getStringNvl("NKINFROMDAY")) ;
-        // ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½
+        // “ü‹à“o˜^“úI—¹”NŒ“ú
         db1.setString("NKINTOYEAR", db2.getStringNvl("NKINTOYEAR")) ;
         db1.setString("NKINTOMONTH", db2.getStringNvl("NKINTOMONTH")) ;
         db1.setString("NKINTODAY", db2.getStringNvl("NKINTODAY")) ;
-        // 2005-10-14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‹µˆê——ï¿½Ì“ï¿½ï¿½tï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ÏX END
-        // 2004-12-15 ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ç‰ï¿½ EX
-        // ï¿½ï¿½ï¿½qï¿½lï¿½Ôï¿½
+        // 2005-10-14 ¿‹“ü‹àó‹µˆê——‚Ì“ú•t“ü—Í•û®•ÏX END
+        // 2004-12-15 “ü‹à“o˜^“ú’Ç‰Á EX
+        // ‚¨‹q—l”Ô†
         db1.setString("USERCD", db2.getStringNvl("USERCD")) ;
-        // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD START
-        // ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½Nï¿½ï¿½ï¿½ï¿½
+        // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD START
+        // x•¥“úŠJn”NŒ“ú
         db1.setString("NKPAYFROMYEAR", db2.getStringNvl("NKPAYFROMYEAR")) ;
         db1.setString("NKPAYFROMMONTH", db2.getStringNvl("NKPAYFROMMONTH")) ;
         db1.setString("NKPAYFROMDAY", db2.getStringNvl("NKPAYFROMDAY")) ;
-        // ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½
+        // x•¥“úI—¹”NŒ“ú
         db1.setString("NKPAYTOYEAR", db2.getStringNvl("NKPAYTOYEAR")) ;
         db1.setString("NKPAYTOMONTH", db2.getStringNvl("NKPAYTOMONTH")) ;
         db1.setString("NKPAYTODAY", db2.getStringNvl("NKPAYTODAY")) ;
-        // ï¿½ó’’ï¿½~ï¿½Lï¿½ï¿½
+        // ó’’â~—L–³
         db1.setPullDown(
             "PD_RESSTP",
             AGSM.getStringArray(AGSM.RS_PD_RESSTP, "RS_PD_RESSTP_CD"),
             AGSM.getStringArray(AGSM.RS_PD_RESSTP, "RS_PD_RESSTP_NM"),
             db2.getStringNvl("PD_RESSTP")
         );
-    	// ï¿½ó’’ï¿½~ï¿½ï¿½ï¿½R
+    	// ó’’â~——R
     	db1.setString("STOPREASON_312", db2.getStringNvl("STOPREASON_312")) ;
     	db1.setString("STOPREASON_501", db2.getStringNvl("STOPREASON_501")) ;
     	db1.setString("STOPREASON_000", db2.getStringNvl("STOPREASON_000")) ;
     	db1.setString("STOPREASON_963", db2.getStringNvl("STOPREASON_963")) ;
     	db1.setString("STOPREASON_725", db2.getStringNvl("STOPREASON_725")) ;
-        // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD END
-        // ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD END
+        // •\¦Œ”
         db1.setPullDown(
             "PD_LISTCNT",
             PD_LISTCNT_VAL,
             PD_LISTCNT_DSP,
             db2.getStringNvl("CURRENT_LISTCNT", PD_LISTCNT_VAL[0])
         ) ;
-        // ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½
+        // •À‚Ñ‘Ö‚¦
         db1.setString("SORT", db2.getStringNvl("SORT", SORT_COLUMN[0])) ;
         db1.setString("ASCEND", db2.getStringNvl("ASCEND", ASCEND[1])) ;
 
-        // ï¿½Ëï¿½ï¿½Iï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½{ï¿½bï¿½Nï¿½X
+        // “Ë‡‘I‘ğƒ`ƒFƒbƒNƒ{ƒbƒNƒX
         XXXXRowSet rs = db1.getRS("RS_WORK_HEAD") ;
         int len = 0 ;
         String[] check_flg = null ;
@@ -804,21 +804,21 @@ public class AGSAG01Action extends AgsActionUtility {
             check_flg
         ) ;
 
-        /*------------------ ï¿½ï¿½Ê•ï¿½ï¿½iï¿½Ìİ’ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ -----------------------------*/
+        /*------------------ ‰æ–Ê•”•i‚Ìİ’è ‚±‚±‚Ü‚Å -----------------------------*/
 
-		// ï¿½Zï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ`ï¿½Fï¿½bï¿½Nï¿½ï¿½Ô‚ï¿½ï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½
+		// ƒZƒbƒVƒ‡ƒ“‚Ìƒ`ƒFƒbƒNó‘Ô‚ğƒNƒŠƒA‚·‚é
 		db1.setStringArray("_WLH_PK", null) ;
 		db1.setStringArray("_CB_CHECK_FLG", null) ;
 
-        // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD START
+        // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD START
     	db1.setString("_STOPREASON_312", "") ;
     	db1.setString("_STOPREASON_501", "") ;
     	db1.setString("_STOPREASON_000", "") ;
     	db1.setString("_STOPREASON_963", "") ;
     	db1.setString("_STOPREASON_725", "") ;
-        // 2019/05/10 ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½@ï¿½\ï¿½dï¿½lï¿½ÏXï¿½Î‰ï¿½ ADD END
+        // 2019/05/10 ‰ñûŠÇ—‹@”\d—l•ÏX‘Î‰ ADD END
 
-        // ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Vï¿½[ï¿½Pï¿½ï¿½ï¿½Xï¿½ï¿½İ’è‚·ï¿½ï¿½
+        // ƒgƒ‰ƒ“ƒV[ƒPƒ“ƒX‚ğİ’è‚·‚é
         db1.setString("SEQ", getCurrSeq(db2)) ;
         setTranId(db1, "AG01");
 
@@ -835,7 +835,7 @@ public class AGSAG01Action extends AgsActionUtility {
         int action_ ;
         action_ = db2.getInt("action_") ;
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Æƒeï¿½[ï¿½uï¿½ï¿½ï¿½Ö’ï¿½ï¿½o
+        // ŒŸõ‚ğs‚¢ì‹Æƒe[ƒuƒ‹‚Ö’Šo
         if ((action_ == ACT_SEARCH) || (action_ == ACT_RETURN) || (action_ == ACT_UPDATE)) {
             rc = accessDB1() ;
             if (rc != 0) {
@@ -843,7 +843,7 @@ public class AGSAG01Action extends AgsActionUtility {
             }
         }
 
-        // ï¿½ï¿½ï¿½Ñ‘Ö‚ï¿½
+        // •À‚Ñ‘Ö‚¦
         if ((action_ == ACT_SEARCH) ||
             (action_ == ACT_SORT) ||
             (action_ == ACT_RETURN) ||
@@ -854,7 +854,7 @@ public class AGSAG01Action extends AgsActionUtility {
             }
         }
 
-        // ï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // ƒy[ƒWŠ„§Œä
         if ((action_ == ACT_SEARCH) ||
             (action_ == ACT_SORT) ||
             (action_ == ACT_LISTCNT) ||
@@ -866,7 +866,7 @@ public class AGSAG01Action extends AgsActionUtility {
             }
         }
 
-        // ï¿½Iï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Oï¿½ÌXï¿½V
+        // ‘I‘ğƒtƒ‰ƒO‚ÌXV
         if ((action_ == ACT_PAGEBREAK) ||
             (action_ == ACT_KESHIKOMI) ||
             (action_ == ACT_LISTCNT)) {
@@ -876,7 +876,7 @@ public class AGSAG01Action extends AgsActionUtility {
             }
         }
 
-        // 1ï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½Ìæ“¾
+        // 1ƒy[ƒW•ª‚Ìæ“¾
         if ((action_ == ACT_SEARCH) ||
             (action_ == ACT_SORT) ||
             (action_ == ACT_LISTCNT) ||
